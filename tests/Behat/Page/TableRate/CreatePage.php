@@ -24,7 +24,7 @@ class CreatePage extends BaseCreatePage implements CreatePageInterface
     {
         return array_merge(
             parent::getDefinedElements(),
-            self::getCreateUpdatePageDefinedElements()
+            self::getCreateUpdatePageDefinedElements(),
         );
     }
 
@@ -51,7 +51,7 @@ class CreatePage extends BaseCreatePage implements CreatePageInterface
     public function addRate(int $rate, int $weightLimit)
     {
         $weightLimitToRateField = $this->getDocument()->findById(
-            'webgriffe_sylius_table_rate_plugin_shipping_table_rate_weightLimitToRate'
+            'webgriffe_sylius_table_rate_plugin_shipping_table_rate_weightLimitToRate',
         );
         $addRateButton = $weightLimitToRateField->findLink('Add');
         $addRateButton->click();

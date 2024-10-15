@@ -46,7 +46,7 @@ class TableRateDeleteSubscriber implements EventSubscriberInterface
                 'webgriffe_sylius_table_rate_plugin.ui.shipping_table_rate.already_used_by_shipping_methods',
                 ResourceControllerEvent::TYPE_ERROR,
                 ['%shipping_methods%' => implode(', ', $foundMethods)],
-                400
+                400,
             );
         }
     }

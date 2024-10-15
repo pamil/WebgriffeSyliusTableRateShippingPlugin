@@ -20,7 +20,7 @@ class ManagingTableRatesContext implements Context
     public function __construct(
         private IndexPageInterface $indexPage,
         private CreatePageInterface $createPage,
-        private UpdatePageInterface $updatePage
+        private UpdatePageInterface $updatePage,
     ) {
     }
 
@@ -217,7 +217,7 @@ class ManagingTableRatesContext implements Context
     {
         Assert::same(
             $this->createPage->getFormValidationMessage(),
-            'You should specify at least one rate for this table rate.'
+            'You should specify at least one rate for this table rate.',
         );
     }
 
@@ -258,7 +258,7 @@ class ManagingTableRatesContext implements Context
      */
     public function theTableRateShouldStillHaveCurrency(
         ShippingTableRate $shippingTableRate,
-        CurrencyInterface $currency
+        CurrencyInterface $currency,
     ) {
         Assert::same($shippingTableRate->getCurrency()->getCode(), $currency->getCode());
     }
@@ -270,7 +270,7 @@ class ManagingTableRatesContext implements Context
     {
         $this->createPage->getValidationMessage(
             'code',
-            'There\'s another shipping table rate with the same code. The code has to be unique.'
+            'There\'s another shipping table rate with the same code. The code has to be unique.',
         );
     }
 
@@ -278,12 +278,12 @@ class ManagingTableRatesContext implements Context
      * @Then I should be notified that the table rate couldn't be deleted because is already used by the :shippingMethod shipping method
      */
     public function iShouldBeNotifiedThatTheTableRateCouldntBeDeletedBecauseIsAlreadyUsedByTheShippingMethod(
-        ShippingMethod $shippingMethod
+        ShippingMethod $shippingMethod,
     ) {
         Assert::contains(
             $this->indexPage->getValidationMessage(),
             'The table rate cannot be deleted because is currently used by the following shipping methods: ' .
-            $shippingMethod->getCode()
+            $shippingMethod->getCode(),
         );
     }
 

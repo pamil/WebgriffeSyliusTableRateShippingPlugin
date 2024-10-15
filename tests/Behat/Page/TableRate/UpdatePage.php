@@ -16,14 +16,14 @@ final class UpdatePage extends BaseUpdatePage implements UpdatePageInterface
     {
         return array_merge(
             parent::getDefinedElements(),
-            CreatePage::getCreateUpdatePageDefinedElements()
+            CreatePage::getCreateUpdatePageDefinedElements(),
         );
     }
 
     public function addRate(int $rate, int $weightLimit)
     {
         $weightLimitToRateField = $this->getDocument()->findById(
-            'webgriffe_sylius_table_rate_plugin_shipping_table_rate_weightLimitToRate'
+            'webgriffe_sylius_table_rate_plugin_shipping_table_rate_weightLimitToRate',
         );
         $addRateButton = $weightLimitToRateField->findLink('Add');
         $addRateButton->click();

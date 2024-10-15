@@ -14,7 +14,7 @@ final class ProductContext implements Context
 {
     public function __construct(
         private ExampleFactoryInterface $productExampleFactory,
-        private RepositoryInterface $productRepository
+        private RepositoryInterface $productRepository,
     ) {
     }
 
@@ -31,7 +31,7 @@ final class ProductContext implements Context
      */
     public function theStoreHasProductPricedWhichWeights(
         string $productName,
-        int $weight
+        int $weight,
     ): void {
         /** @var ProductInterface $product */
         $product = $this->productExampleFactory->create([

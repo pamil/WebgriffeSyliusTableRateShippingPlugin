@@ -18,4 +18,3 @@ return static function (ECSConfig $ecsConfig): void {
         VisibilityRequiredFixer::class => ['*Spec.php'],
     ]);
 };
-

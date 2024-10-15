@@ -17,13 +17,13 @@ final class TableRateShippingMethodEligibilityChecker implements ShippingMethodE
 {
     public function __construct(
         private ShippingMethodEligibilityCheckerInterface $eligibilityChecker,
-        private TableRateResolverInterface $tableRateResolver
+        private TableRateResolverInterface $tableRateResolver,
     ) {
     }
 
     public function isEligible(
         ShippingSubjectInterface $subject,
-        ShippingMethodInterface $method
+        ShippingMethodInterface $method,
     ): bool {
         if (!$this->eligibilityChecker->isEligible($subject, $method)) {
             return false;

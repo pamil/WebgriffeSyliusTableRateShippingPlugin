@@ -19,7 +19,7 @@ final class ChannelBasedTableRateConfigurationType extends AbstractType
                 'entry_options' => function (ChannelInterface $channel): array {
                     return ['label' => $channel->getName(), 'currency' => $channel->getBaseCurrency()];
                 },
-            ]
+            ],
         );
     }
 

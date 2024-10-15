@@ -18,7 +18,7 @@ final class AdminMenuListener
         $configuration
             ->addChild(
                 'webgriffe-sylius-table-rate-plugin-table-rates',
-                ['route' => 'webgriffe_admin_shipping_table_rate_index']
+                ['route' => 'webgriffe_admin_shipping_table_rate_index'],
             )
             ->setLabel('webgriffe.ui.shipping_table_rates')
             ->setLabelAttribute('icon', 'pallet')

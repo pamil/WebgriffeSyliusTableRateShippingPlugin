@@ -16,7 +16,7 @@ final class ShippingTableRateContext implements Context
     public function __construct(
         private AddressFactoryInterface $addressFactory,
         private AddressPageInterface $addressPage,
-        private SelectShippingPageInterface $selectShippingPage
+        private SelectShippingPageInterface $selectShippingPage,
     ) {
     }
 

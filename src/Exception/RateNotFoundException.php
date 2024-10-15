@@ -13,12 +13,12 @@ class RateNotFoundException extends \RuntimeException
         ShippingTableRate $shippingTableRate,
         float $weight,
         int $code = 0,
-        Throwable $previous = null
+        Throwable $previous = null,
     ) {
         $message = sprintf(
             'The shipping table rate "%s" cannot find a rate for a weight of "%s"',
             $shippingTableRate->getCode(),
-            $weight
+            $weight,
         );
         parent::__construct($message, $code, $previous);
     }

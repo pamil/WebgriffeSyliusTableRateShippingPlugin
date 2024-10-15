@@ -24,7 +24,7 @@ final class WeightLimitToRateType extends AbstractType
                     'scale' => 2,
                     'required' => true,
                     'constraints' => [new NotBlank(['groups' => 'sylius'])],
-                ]
+                ],
             )
             ->add(
                 'rate',
@@ -33,7 +33,7 @@ final class WeightLimitToRateType extends AbstractType
                     'label' => $messagesNamespace . 'rate',
                     'required' => true,
                     'constraints' => [new NotBlank(['groups' => 'sylius'])],
-                ]
+                ],
             )
         ;
     }

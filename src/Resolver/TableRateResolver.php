@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Webgriffe\SyliusTableRateShippingPlugin\Resolver;
 
+if (!interface_exists(\Sylius\Resource\Doctrine\Persistence\RepositoryInterface::class)) {
+    class_alias(\Sylius\Component\Resource\Repository\RepositoryInterface::class, \Sylius\Resource\Doctrine\Persistence\RepositoryInterface::class);
+}
 use Sylius\Component\Core\Exception\MissingChannelConfigurationException;
 use Sylius\Component\Core\Model\ShipmentInterface;
-use Sylius\Component\Resource\Repository\RepositoryInterface;
+use Sylius\Resource\Doctrine\Persistence\RepositoryInterface;
 use Webgriffe\SyliusTableRateShippingPlugin\Entity\ShippingTableRate;
 use Webgriffe\SyliusTableRateShippingPlugin\Form\Type\Shipping\Calculator\TableRateConfigurationType;
 use Webmozart\Assert\Assert;

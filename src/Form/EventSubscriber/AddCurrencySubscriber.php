@@ -33,7 +33,7 @@ class AddCurrencySubscriber implements EventSubscriberInterface
                 'required' => true,
                 'placeholder' => $messagesNamespace . 'currency.placeholder',
                 'disabled' => $this->shouldCurrencyBeDisabled($resource),
-            ]
+            ],
         );
     }
 

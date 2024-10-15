@@ -27,7 +27,7 @@ final class ShippingTableRateContext implements Context
         private ObjectManager $shippingTableRateManager,
         private SharedStorageInterface $sharedStorage,
         private ExampleFactoryInterface $shippingMethodExampleFactory,
-        private RepositoryInterface $shippingMethodRepository
+        private RepositoryInterface $shippingMethodRepository,
     ) {
     }
 
@@ -41,7 +41,7 @@ final class ShippingTableRateContext implements Context
         Assert::count(
             $shippingTableRates,
             1,
-            sprintf('%d shipping table rates has been found with name "%s".', count($shippingTableRates), $name)
+            sprintf('%d shipping table rates has been found with name "%s".', count($shippingTableRates), $name),
         );
 
         return $shippingTableRates[0];
@@ -80,7 +80,7 @@ final class ShippingTableRateContext implements Context
     public function theStoreHasShippingMethodUsingTableRateForChannel(
         string $shippingMethodName,
         ShippingTableRate $shippingTableRate,
-        ChannelInterface $channel
+        ChannelInterface $channel,
     ): void {
         /** @var ShippingMethodInterface $shippingMethod */
         $shippingMethod = $this->shippingMethodExampleFactory->create([

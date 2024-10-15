@@ -28,7 +28,7 @@ final class ShippingTableRateType extends AbstractResourceType
                     'allow_add' => true,
                     'allow_delete' => true,
                     'entry_type' => WeightLimitToRateType::class,
-                ]
+                ],
             )
         ;
     }
